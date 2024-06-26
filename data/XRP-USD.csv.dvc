@@ -1,0 +1,5 @@
+outs:
+- md5: aa2d5c738027307fab9503edb8b28318
+  size: 24495
+  hash: md5
+  path: XRP-USD.csv

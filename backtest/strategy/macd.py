@@ -45,6 +45,7 @@ class MacdStrategy(bt.Strategy):
                      (order.executed.price,
                       order.executed.value,
                       order.executed.comm))
+                
                 self.bar_executed = len(self)
         elif order.status in [order.Canceled, order.Margin, order.Rejected]:
             self.order('Order Cancled/margin/rejected')

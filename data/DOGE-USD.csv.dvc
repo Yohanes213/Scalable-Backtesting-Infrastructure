@@ -1,0 +1,5 @@
+outs:
+- md5: 083c80d0a625d4cf9b761c908a216e9d
+  size: 24367
+  hash: md5
+  path: DOGE-USD.csv

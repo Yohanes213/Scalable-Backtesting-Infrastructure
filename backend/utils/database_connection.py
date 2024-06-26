@@ -43,5 +43,8 @@ def get_base():
 
 
 def create_all_tables():
-   return Base.metadata.create_all(bind=engine)
+    
+    return Base.metadata.create_all(bind=engine)
  
+def drop_all_tables():
+    return Base.metadata.drop_all(bind=engine)

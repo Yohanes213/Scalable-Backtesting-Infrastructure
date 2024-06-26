@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto  p-4">
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/signup" element={<Signup />} />

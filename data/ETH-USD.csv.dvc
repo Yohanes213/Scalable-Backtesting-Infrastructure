@@ -1,0 +1,5 @@
+outs:
+- md5: 17756da14b5a18b75324a528b91c61e6
+  size: 30314
+  hash: md5
+  path: ETH-USD.csv

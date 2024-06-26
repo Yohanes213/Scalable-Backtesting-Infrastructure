@@ -1,19 +1,24 @@
-from typing import Any, Dict, Optional
+from typing import List, Optional
 from pydantic import BaseModel
 
 
 
+
+class IndicatorParams(BaseModel):
+    name: str
+    value: int
+
 class ScenesBaseVM(BaseModel):
-    strategy_name : str  #//ind
-    start_date : str #back
-    end_date : str #back
-    params :Dict[str, int]
+    coin_name: str
+    strategy_name : str  
+    start_date : str 
+    end_date : str 
+    params :List[IndicatorParams]
     start_cash : float
     commission : float
    
-   
-   
- 
+
+
    
 class ScenesCreateVM(ScenesBaseVM):
     pass

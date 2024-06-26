@@ -2,7 +2,8 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
+import qs from 'qs'
 const validationSchema = Yup.object({
   username: Yup.string()
     .min(3, 'Username must be at least 3 characters')
@@ -10,8 +11,8 @@ const validationSchema = Yup.object({
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters')
     .matches(/[a-zA-Z]/, 'Password must contain a letter')
-    .matches(/\d/, 'Password must contain a number')
-    .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain a special character')
+    // .matches(/\d/, 'Password must contain a number')
+    // .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain a special character')
     .required('Required'),
 });
 
@@ -22,14 +23,31 @@ function Signup() {
       password: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      // Handle signin
+    onSubmit: async (values) => {
+      
+      try {
+        const response = await axios.post(
+          'http://localhost:8000/auth/signup', 
+          qs.stringify(values), 
+          { headers: { 'Content-Type': 'application/json' } }
+
+        );
+        console.log('Signup successful!', response.data);
+
+        alert('Signup successful! Please login to continue.');
+        window.location.href = '/login'; 
+      } catch (error) {
+        console.error('Signup error:', error);
+        const errorMessage = document.getElementById('error-message');
+        if (errorMessage) {
+          errorMessage.textContent = 'Signup failed. Please try again.';
+        }
+      }
     },
   });
 
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl max-w-screen-sm">
       <div className="card-body">
         <h2 className="card-title">Sign Up</h2>
         <form onSubmit={formik.handleSubmit}>
@@ -76,6 +94,7 @@ function Signup() {
         <div className="mt-4">
           <p>Already have an account? <Link to="/login" className="text-blue-500">Login here</Link></p>
         </div>
+        <div id="error-message"></div> {/* Added element for error message */}
       </div>
     </div>
   );

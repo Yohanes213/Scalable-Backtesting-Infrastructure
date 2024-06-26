@@ -33,7 +33,7 @@ async def get_user(db: AsyncSession, username: str):
 
 async def authenticate_user(db: AsyncSession, username: str, password: str):
     user = await get_user(db, username)
-    print("user---", user)
+   
     if not user:
         return False
     if not compare_hash_value(password, user.password):
@@ -72,7 +72,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)], db: As
 
 async def create_user(db: AsyncSession, user: UserCreate):
     hashed_password = get_hashed_value(user.password)
-    db_user = DBUser(username=user.username, email=user.email,  password=hashed_password)
+    db_user = DBUser(username=user.username,  password=hashed_password)
     db.add(db_user)
     try:
          db.commit()

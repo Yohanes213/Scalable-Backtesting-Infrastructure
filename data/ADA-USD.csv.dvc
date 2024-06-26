@@ -1,0 +1,5 @@
+outs:
+- md5: 7bf5703543fc942554d0f62f7ffdf0af
+  size: 24272
+  hash: md5
+  path: ADA-USD.csv

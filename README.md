@@ -24,51 +24,46 @@ The project will use candlestick data from Yahoo Finance and Binance. Candlestic
 * Skills in technical analysis, backtesting, trading, and data engineering
 * Knowledge of financial prediction, movement prediction, and enterprise-grade data engineering
 
-**Technical Requirements**
--------------------------
+## Installation
+To get started with this project, clone the repository and install the required dependencies.
 
-* Apache Airflow
-* Apache Kafka
-* MLflow
-* CML
-* Structured Streaming
-* Data modeling techniques (Kimbal, DataVault, Immon data models, database normal forms (1NF, 2NF, 3NF, 4NF, 5NF))
+```bash
+git clone https://github.com/group1Goldreich/Scalable-Backtesting-Infrastructure.git
+cd Scalable-Backtesting-Infrastructure
+pip install -r requirements.txt
+```
+Ensure you have the necessary environment setup, including Python 3.8+ and any other dependencies specified in the requirements.txt file.
 
-**Tasks**
-------
+## Usage
 
-### Task 1: Backtesting
+1. Build and run the Docker containers:
+```bash
+docker-compose build
+docker-compose up -d
+```
 
-* Plan the flow of work and assign tasks
-* Understand the difference between fundamental and technical analysis
-* Run multiple backtests using different technical indicators and assets
-* Generate important metrics from backtests (return, number of trades, winning trades, losing trades, max drawdown, Sharpe ratio)
-* Create a dynamic scene that automates the run of backtests
+2. Execute the backtest:
+```bash
+python3 backtest/main.py
+```
 
-### Task 2: Build Backend for Processing Requests
+3. Start the backend:
+Then run the backend
+```bash
+fastapi run backend/main.py
+```
 
-* Design SQL table schema to store scenes and backtests
-* Create a Flask, FastAPI, or Node.js application to take in scenes and run backtests
-* Create a module to check if backtest results for a specific range exist
-* Create authentication handling backend for users to login
-
-### Task 3: Integrate MLOps Tools into Your Workflow
-
-* Use Kafka to receive scenes that contain hyperparameters of backtests
-* Publish backtest results to Kafka
-* Automate backtest runs using Airflow
-* Integrate MLflow using the provided database as a remote store
-* Integrate CML to run various backtests on algorithmic changes
-* Use GitHub actions to run test cases on code change
-
-### Task 4: Build Frontend for Running Backtests
-
-* Build a frontend application for logged-in users to specify scene parameters and get backtest results
+4. Launch the frontend:
+Then The forntend
+```bash
+npm install
+nvm start
+```
 
 **Contributors**
 ------
 
-- [Yohanes Teshome kebede](https://github.com/Yohanes213)
+- [Yohanes Teshome Kebede](https://github.com/Yohanes213)
 - [Eyerusalem Admassu](https://github.com/jadmassu)
 - [Getachew Abebe](https://github.com/GetachewAbebe)
 - [Mistir Nigusse](https://github.com/mistir-nigusse)

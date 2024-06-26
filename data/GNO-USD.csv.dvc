@@ -1,0 +1,5 @@
+outs:
+- md5: 3d1a941a474ec4e689b9b8ce022705bd
+  size: 27233
+  hash: md5
+  path: GNO-USD.csv

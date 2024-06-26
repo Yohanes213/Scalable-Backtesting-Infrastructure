@@ -1,0 +1,5 @@
+outs:
+- md5: ab65ae22cd71bdb8ad947069a5415960
+  size: 28088
+  hash: md5
+  path: BNB-USD.csv

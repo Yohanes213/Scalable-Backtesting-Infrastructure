@@ -10,7 +10,6 @@ class BacktestResult(Base):
     
     backtest_id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.user_id'))
-    indicator_id = Column(Integer, ForeignKey('indicators.indicator_id'))
     scene_id = Column(Integer, ForeignKey('scenes.scene_id'))
     final_portfolio_value = Column(Float)
     total_trades = Column(Integer)
@@ -21,5 +20,10 @@ class BacktestResult(Base):
     sharpe_ratio = Column(Float)
 
     user = relationship("User")
-    indicator = relationship("Indicator", back_populates="backtest_results")
+    # indicator = relationship("Indicator", back_populates="backtest_results")
+    indicator_parameters = relationship("IndicatorParameter", back_populates="backtest_results")
+    
     scene = relationship("Scene", back_populates="backtests")
+    
+    
+    
