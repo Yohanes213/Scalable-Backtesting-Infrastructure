@@ -63,8 +63,4 @@ nvm start
 **Contributors**
 ------
 
-- [Yohanes Teshome Kebede](https://github.com/Yohanes213)
-- [Eyerusalem Admassu](https://github.com/jadmassu)
-- [Getachew Abebe](https://github.com/GetachewAbebe)
-- [Mistir Nigusse](https://github.com/mistir-nigusse)
-- [Abdelrhman Yasir](https://github.com/AB-y1)
+For a list of contributors, see the [CONTRIBUTORS.md](CONTRIBUTORS.md) file.
