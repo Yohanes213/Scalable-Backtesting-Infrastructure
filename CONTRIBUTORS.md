@@ -1,5 +1,5 @@
 <div align="center"> 
-## Contributors
+<h2>Contributors</h2>
 
 ---
 
